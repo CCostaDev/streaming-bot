@@ -26,7 +26,7 @@ def get_response(query, chat_history):
     
     prompt = ChatPromptTemplate.from_template(template)
     
-    llm = ChatOpenAI()
+    llm = ChatOpenAI(model="gpt-4.1-mini")  # "gpt-4o" for better results, "gpt-4o-mini" for cheaper and quick results (moderate reasoning), "gpt-4.1-mini" for quicker results but more expensive that 4o-mini (moderate reasoning)
 
     chain = prompt | llm | StrOutputParser()
 
